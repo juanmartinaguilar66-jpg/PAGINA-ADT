@@ -57,6 +57,54 @@
     });
   }
 
+  // Stat counters: count up from 0 to the target value once the stat
+  // scrolls into view. Static final value is in the markup already,
+  // so a JS failure just means no animation, never a missing number.
+  var counterEls = document.querySelectorAll('.stat-number[data-count-target]');
+
+  function formatCount(value) {
+    return value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  }
+
+  function animateCount(el) {
+    var target = parseInt(el.getAttribute('data-count-target'), 10);
+    var suffix = el.getAttribute('data-count-suffix') || '';
+    var duration = 1100;
+    var start = null;
+
+    function step(timestamp) {
+      if (start === null) start = timestamp;
+      var progress = Math.min((timestamp - start) / duration, 1);
+      var eased = 1 - Math.pow(1 - progress, 3);
+      el.textContent = formatCount(Math.floor(eased * target)) + suffix;
+      if (progress < 1) {
+        window.requestAnimationFrame(step);
+      } else {
+        el.textContent = formatCount(target) + suffix;
+      }
+    }
+
+    window.requestAnimationFrame(step);
+  }
+
+  if ('IntersectionObserver' in window && counterEls.length) {
+    var counterObserver = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            animateCount(entry.target);
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    counterEls.forEach(function (el) {
+      counterObserver.observe(el);
+    });
+  }
+
   // Before/after comparison sliders.
   // Desktop: the reveal follows the cursor as it moves over the image
   // (no click-and-drag needed). Touch: follows the finger while dragging.
