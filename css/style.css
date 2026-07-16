@@ -377,6 +377,8 @@ p {
 .hero-content {
   position: relative;
   z-index: 1;
+  text-align: center;
+  margin-inline: auto;
 }
 
 .hero-subtitle {
@@ -401,11 +403,17 @@ p {
   max-width: 55ch;
 }
 
+.about-text p + p {
+  margin-top: 1.1rem;
+}
+
 .about-media img {
   border-radius: var(--radius);
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: center 62%;
 }
 
 @media (min-width: 900px) {
@@ -426,8 +434,10 @@ p {
 .qh-media img {
   border-radius: var(--radius);
   width: 100%;
-  aspect-ratio: 4 / 5;
+  height: auto;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
+  object-position: center 78%;
 }
 
 @media (min-width: 900px) {
@@ -468,6 +478,14 @@ p {
 .process-step h3 {
   text-transform: uppercase;
   letter-spacing: 0.03em;
+  font-size: 0.95rem;
+}
+
+.process-desc {
+  color: var(--color-gray);
+  font-size: 0.88rem;
+  margin-top: 0.5rem;
+  line-height: 1.5;
 }
 
 
@@ -681,6 +699,7 @@ p {
 
 .testimonial-photo {
   width: 100%;
+  height: auto;
   aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius);
@@ -782,6 +801,17 @@ p {
   margin-top: 2rem;
 }
 
+.form-row {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 480px) {
+  .form-row {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 .form-field {
   display: flex;
   flex-direction: column;
@@ -798,6 +828,7 @@ p {
 }
 
 .form-field input,
+.form-field select,
 .form-field textarea {
   background-color: var(--color-surface);
   border: 1px solid rgba(255, 255, 255, 0.12);
@@ -807,7 +838,22 @@ p {
   transition: border-color var(--transition-fast);
 }
 
+.form-field select {
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTYgOSBMMTIgMTUgTDE4IDkiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzhBOEE4QSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 16px;
+  padding-right: 2.75rem;
+}
+
+.form-field select:invalid {
+  color: var(--color-gray);
+}
+
 .form-field input:focus,
+.form-field select:focus,
 .form-field textarea:focus {
   border-color: var(--color-orange);
   outline: none;
