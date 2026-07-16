@@ -21,16 +21,27 @@
     });
   }
 
-  // Fade-in on scroll
+  // Fade-in on scroll. Elements that share a parent (e.g. cards in a
+  // grid) cascade in with a small stagger instead of popping in at once.
   var fadeEls = document.querySelectorAll('.fade-in');
+  var STAGGER_MS = 70;
+  var MAX_DELAY_MS = 420;
 
   if ('IntersectionObserver' in window && fadeEls.length) {
     var observer = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            observer.unobserve(entry.target);
+            var el = entry.target;
+            var siblings = Array.prototype.filter.call(
+              el.parentElement.children,
+              function (child) { return child.classList.contains('fade-in'); }
+            );
+            var index = siblings.indexOf(el);
+            var delay = Math.min(Math.max(index, 0) * STAGGER_MS, MAX_DELAY_MS);
+            el.style.transitionDelay = delay + 'ms';
+            el.classList.add('is-visible');
+            observer.unobserve(el);
           }
         });
       },

@@ -424,47 +424,42 @@ p {
 }
 
 /* ========== Que hacemos / Proceso ========== */
-.qh-grid {
-  display: grid;
-  gap: 2.5rem;
-  align-items: center;
-  margin-top: 2.5rem;
-}
-
-.qh-media img {
-  border-radius: var(--radius);
-  width: 100%;
-  height: auto;
-  aspect-ratio: 16 / 10;
-  object-fit: cover;
-  object-position: center 78%;
-}
-
-@media (min-width: 900px) {
-  .qh-grid {
-    grid-template-columns: 1.1fr 0.9fr;
-    gap: 4rem;
-  }
-}
-
 .process-steps {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 2rem;
   margin-top: 2.5rem;
   counter-reset: step;
 }
 
+@media (min-width: 1000px) {
+  .process-steps {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 1.75rem;
+  }
+}
+
 .process-step {
   position: relative;
-  padding-top: 1.5rem;
+  padding: 1.5rem 1rem 1.75rem 0;
   border-top: 1px solid rgba(255, 255, 255, 0.12);
+  transition: transform var(--transition-base), border-color var(--transition-base);
+}
+
+.process-step:hover {
+  border-top-color: var(--color-orange);
+  transform: translateY(-6px);
 }
 
 .process-icon {
   color: var(--color-orange);
   display: inline-flex;
   margin-bottom: 1rem;
+  transition: transform var(--transition-base);
+}
+
+.process-step:hover .process-icon {
+  transform: scale(1.12);
 }
 
 .process-number {
@@ -473,6 +468,11 @@ p {
   color: var(--color-petroleo);
   font-size: 1.1rem;
   margin-bottom: 0.4rem;
+  transition: color var(--transition-base);
+}
+
+.process-step:hover .process-number {
+  color: var(--color-orange);
 }
 
 .process-step h3 {
@@ -905,6 +905,41 @@ p {
   margin-top: 1.5rem;
 }
 
+.contact-highlight {
+  margin-top: 2.5rem;
+  padding: 1.75rem;
+  background-color: var(--color-surface);
+  border-left: 3px solid var(--color-orange);
+  border-radius: var(--radius);
+}
+
+.contact-highlight h3 {
+  color: var(--color-orange);
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+}
+
+.contact-highlight p {
+  color: var(--color-gray);
+  font-size: 0.92rem;
+  margin-bottom: 1rem;
+}
+
+.contact-highlight-list li + li {
+  margin-top: 0.6rem;
+}
+
+.contact-highlight-list a {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  font-size: 0.92rem;
+  transition: color var(--transition-fast);
+}
+
+.contact-highlight-list a:hover {
+  color: var(--color-orange);
+}
+
 @media (min-width: 900px) {
   .contact-grid {
     grid-template-columns: 1.2fr 0.8fr;
@@ -966,11 +1001,13 @@ p {
 
 /* ========== Fade-in on scroll ========== */
 /* Content is visible by default; JS opts sections into the animation
-   (via the .js class on <html>) so a JS failure never hides content. */
+   (via the .js class on <html>) so a JS failure never hides content.
+   The easing curve (ease-out-expo-ish) and upward drift are chosen to
+   read as a calm, deliberate reveal rather than a bouncy entrance. */
 .js .fade-in {
   opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
+  transform: translateY(28px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .js .fade-in.is-visible {
