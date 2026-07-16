@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" role="img" aria-hidden="true">
+  <defs>
+    <linearGradient id="pb" x1="1" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#232323"/>
+      <stop offset="100%" stop-color="#0a0a0a"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="600" fill="url(#pb)"/>
+  <g stroke="#292929" stroke-width="1">
+    <line x1="0" y1="0" x2="800" y2="600"/>
+    <line x1="800" y1="0" x2="0" y2="600"/>
+  </g>
+  <rect x="0" y="0" width="800" height="600" fill="none" stroke="#F26B2A" stroke-opacity="0.16" stroke-width="2"/>
+  <text x="50%" y="50%" fill="#5a5a5a" font-family="Arial, sans-serif" font-size="20" letter-spacing="4" text-anchor="middle">ADT AUTOS</text>
+  <text x="50%" y="55%" fill="#3d3d3d" font-family="Arial, sans-serif" font-size="12" letter-spacing="2" text-anchor="middle">FOTO PENDIENTE</text>
+</svg>
