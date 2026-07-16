@@ -11,10 +11,11 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="ADT AUTOS | Expertos en colisiones en Quito">
   <meta property="og:description" content="Recuperamos más que tu auto. Taller premium especialista en colisiones, pintura, enderezada y mecánica en Quito, Ecuador.">
-  <meta property="og:image" content="assets/images/placeholder-hero.svg">
+  <meta property="og:image" content="assets/images/hero-taller.jpg">
   <meta property="og:locale" content="es_EC">
 
-  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,12 @@
 
   <header class="site-header" id="site-header">
     <nav class="navbar container" aria-label="Navegación principal">
-      <a href="#inicio" class="logo">ADT <span>AUTOS</span></a>
+      <a href="#inicio" class="logo">
+        <picture>
+          <source srcset="assets/images/logo-adt-autos.webp" type="image/webp">
+          <img src="assets/images/logo-adt-autos.jpg" alt="ADT AUTOS - Expertos en colisiones" width="480" height="480" class="logo-img">
+        </picture>
+      </a>
 
       <button class="nav-toggle" id="nav-toggle" aria-controls="nav-menu" aria-expanded="false" aria-label="Abrir menú de navegación">
         <span class="nav-toggle-bar"></span>
@@ -47,13 +53,13 @@
         </ul>
 
         <div class="nav-social" aria-label="Redes sociales">
-          <a href="#" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
+          <a href="https://www.instagram.com/adtautoscolisiones/" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
           </a>
-          <a href="#" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
+          <a href="https://www.facebook.com/profile.php?id=61592028568207" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-4 1.8-4 4v2H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V9c0-.6.4-1 1-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
           </a>
-          <a href="#" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
+          <a href="https://www.tiktok.com/@adt_autos" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
             <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M13.5 3v11.2a2.8 2.8 0 1 1-2-2.68" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13.5 3c.3 2.2 2 3.9 4.2 4.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </a>
         </div>
@@ -66,10 +72,13 @@
   <main id="main">
     <!-- HERO -->
     <section id="inicio" class="hero">
-      <img src="assets/images/placeholder-hero.svg" alt="Vehículo reparado en el taller ADT AUTOS" class="hero-bg" fetchpriority="high">
+      <picture>
+        <source srcset="assets/images/hero-taller.webp" type="image/webp">
+        <img src="assets/images/hero-taller.jpg" alt="Fachada del taller ADT AUTOS en Quito" class="hero-bg" fetchpriority="high">
+      </picture>
       <div class="hero-overlay"></div>
       <div class="container hero-content">
-        <h1>EXPERTOS EN COLISIONES</h1>
+        <h1>RECUPERAMOS TU TRANQUILIDAD</h1>
         <p class="hero-subtitle">Recuperamos más que tu auto.</p>
         <a href="#contacto" class="btn btn-cta">Solicita tu cotización</a>
       </div>
@@ -83,7 +92,10 @@
           <p>Recuperamos más que vehículos. Recuperamos la tranquilidad de las personas. Cada vehículo que entra a ADT AUTOS representa una historia, y cada reparación representa una nueva oportunidad.</p>
         </div>
         <div class="about-media">
-          <img src="assets/images/placeholder-workshop.svg" alt="Interior del taller ADT AUTOS en Quito" loading="lazy" width="900" height="1100">
+          <picture>
+            <source srcset="assets/images/quienes-somos.webp" type="image/webp">
+            <img src="assets/images/quienes-somos.jpg" alt="Técnico de ADT AUTOS preparando la puerta de un vehículo para pintura" loading="lazy" width="1050" height="1400">
+          </picture>
         </div>
       </div>
     </section>
@@ -92,38 +104,48 @@
     <section id="que-hacemos" class="section fade-in">
       <div class="container">
         <h2>Qué hacemos</h2>
-        <p class="section-lead">Somos un taller moderno, con procesos claros, calidad constante y atención personalizada — no un taller improvisado ni uno más del montón.</p>
+        <div class="qh-grid">
+          <div class="qh-text">
+            <p class="section-lead">Somos un taller moderno, con procesos claros, calidad constante y atención personalizada — no un taller improvisado ni uno más del montón.</p>
 
-        <ol class="process-steps">
-          <li class="process-step">
-            <span class="process-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" width="32" height="32"><path d="M8 14 L20 6 L32 14 V32 H8 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 14 L20 22 L32 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="process-number">01</span>
-            <h3>Recepción</h3>
-          </li>
-          <li class="process-step">
-            <span class="process-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" width="32" height="32"><circle cx="17" cy="17" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="24" y1="24" x2="33" y2="33" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
-            </span>
-            <span class="process-number">02</span>
-            <h3>Diagnóstico</h3>
-          </li>
-          <li class="process-step">
-            <span class="process-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" width="32" height="32"><path d="M24 8 L32 16 L18 30 L10 32 L12 24 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="process-number">03</span>
-            <h3>Reparación</h3>
-          </li>
-          <li class="process-step">
-            <span class="process-icon" aria-hidden="true">
-              <svg viewBox="0 0 40 40" width="32" height="32"><path d="M8 21 L16 29 L32 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </span>
-            <span class="process-number">04</span>
-            <h3>Entrega</h3>
-          </li>
-        </ol>
+            <ol class="process-steps">
+              <li class="process-step">
+                <span class="process-icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="32" height="32"><path d="M8 14 L20 6 L32 14 V32 H8 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M8 14 L20 22 L32 14" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="process-number">01</span>
+                <h3>Recepción</h3>
+              </li>
+              <li class="process-step">
+                <span class="process-icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="32" height="32"><circle cx="17" cy="17" r="9" fill="none" stroke="currentColor" stroke-width="1.6"/><line x1="24" y1="24" x2="33" y2="33" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+                </span>
+                <span class="process-number">02</span>
+                <h3>Diagnóstico</h3>
+              </li>
+              <li class="process-step">
+                <span class="process-icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="32" height="32"><path d="M24 8 L32 16 L18 30 L10 32 L12 24 Z" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="process-number">03</span>
+                <h3>Reparación</h3>
+              </li>
+              <li class="process-step">
+                <span class="process-icon" aria-hidden="true">
+                  <svg viewBox="0 0 40 40" width="32" height="32"><path d="M8 21 L16 29 L32 11" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+                <span class="process-number">04</span>
+                <h3>Entrega</h3>
+              </li>
+            </ol>
+          </div>
+          <div class="qh-media">
+            <picture>
+              <source srcset="assets/images/que-hacemos-detalle.webp" type="image/webp">
+              <img src="assets/images/que-hacemos-detalle.jpg" alt="Técnico de ADT AUTOS revisando el guardafango de un vehículo" loading="lazy" width="1050" height="1400">
+            </picture>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -184,58 +206,77 @@
     <section id="resultados" class="section fade-in">
       <div class="container">
         <h2>Resultados</h2>
-        <p class="section-lead">Fotos reales del antes y después de nuestro trabajo, próximamente.</p>
+        <p class="section-lead">Casos reales de nuestro trabajo. Desliza cada imagen para ver la transformación. Por privacidad, las placas se cubren siempre.</p>
         <div class="results-grid">
-          <div class="result-pair">
-            <figure>
-              <img src="assets/images/placeholder-photo-a.svg" alt="Antes: vehículo con daño por colisión frontal" loading="lazy" width="800" height="600">
-              <figcaption>Antes</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/placeholder-photo-b.svg" alt="Después: vehículo reparado tras colisión frontal" loading="lazy" width="800" height="600">
-              <figcaption>Después</figcaption>
-            </figure>
+
+          <div class="compare">
+            <div class="compare-frame">
+              <picture>
+                <source srcset="assets/images/resultado1-despues.webp" type="image/webp">
+                <img class="compare-img compare-after" src="assets/images/resultado1-despues.jpg" alt="Después: paragolpes trasero reparado con acabado impecable" loading="lazy" width="1050" height="1400">
+              </picture>
+              <picture>
+                <source srcset="assets/images/resultado1-antes.webp" type="image/webp">
+                <img class="compare-img compare-before" src="assets/images/resultado1-antes.jpg" alt="Antes: paragolpes trasero con pintura dañada y desgastada" loading="lazy" width="1050" height="1400">
+              </picture>
+              <span class="compare-badge compare-badge-before">Antes</span>
+              <span class="compare-badge compare-badge-after">Después</span>
+              <div class="compare-handle" aria-hidden="true"></div>
+              <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después: reparación de paragolpes trasero">
+            </div>
           </div>
-          <div class="result-pair">
-            <figure>
-              <img src="assets/images/placeholder-photo-a.svg" alt="Antes: carrocería con pintura dañada" loading="lazy" width="800" height="600">
-              <figcaption>Antes</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/placeholder-photo-b.svg" alt="Después: pintura automotriz con acabado uniforme" loading="lazy" width="800" height="600">
-              <figcaption>Después</figcaption>
-            </figure>
+
+          <div class="compare">
+            <div class="compare-frame">
+              <picture>
+                <source srcset="assets/images/resultado2-despues.webp" type="image/webp">
+                <img class="compare-img compare-after" src="assets/images/resultado2-despues.jpg" alt="Después: parachoques delantero y faro reparados (placa cubierta por privacidad)" loading="lazy" width="1400" height="1050">
+              </picture>
+              <picture>
+                <source srcset="assets/images/resultado2-antes.webp" type="image/webp">
+                <img class="compare-img compare-before" src="assets/images/resultado2-antes.jpg" alt="Antes: parachoques delantero y faro dañados tras colisión (placa cubierta por privacidad)" loading="lazy" width="1400" height="788">
+              </picture>
+              <span class="compare-badge compare-badge-before">Antes</span>
+              <span class="compare-badge compare-badge-after">Después</span>
+              <div class="compare-handle" aria-hidden="true"></div>
+              <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después: reparación de parachoques delantero y faro">
+            </div>
           </div>
-          <div class="result-pair">
-            <figure>
-              <img src="assets/images/placeholder-photo-a.svg" alt="Antes: estructura del vehículo deformada" loading="lazy" width="800" height="600">
-              <figcaption>Antes</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/placeholder-photo-b.svg" alt="Después: estructura corregida con enderezada de precisión" loading="lazy" width="800" height="600">
-              <figcaption>Después</figcaption>
-            </figure>
+
+          <div class="compare">
+            <div class="compare-frame">
+              <picture>
+                <source srcset="assets/images/resultado3-despues.webp" type="image/webp">
+                <img class="compare-img compare-after" src="assets/images/resultado3-despues.jpg" alt="Después: frente del vehículo reparado y repintado (placa cubierta por privacidad)" loading="lazy" width="1400" height="1050">
+              </picture>
+              <picture>
+                <source srcset="assets/images/resultado3-antes.webp" type="image/webp">
+                <img class="compare-img compare-before" src="assets/images/resultado3-antes.jpg" alt="Antes: capó y parachoques delantero con daños severos por colisión" loading="lazy" width="1400" height="1050">
+              </picture>
+              <span class="compare-badge compare-badge-before">Antes</span>
+              <span class="compare-badge compare-badge-after">Después</span>
+              <div class="compare-handle" aria-hidden="true"></div>
+              <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después: reparación frontal completa">
+            </div>
           </div>
-          <div class="result-pair">
-            <figure>
-              <img src="assets/images/placeholder-photo-a.svg" alt="Antes: pintura opaca y rayones en la carrocería" loading="lazy" width="800" height="600">
-              <figcaption>Antes</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/placeholder-photo-b.svg" alt="Después: brillo original recuperado con pulida y estética" loading="lazy" width="800" height="600">
-              <figcaption>Después</figcaption>
-            </figure>
+
+          <div class="compare">
+            <div class="compare-frame">
+              <picture>
+                <source srcset="assets/images/resultado4-despues.webp" type="image/webp">
+                <img class="compare-img compare-after" src="assets/images/resultado4-despues.jpg" alt="Después: parachoques delantero reparado con acabado de fábrica" loading="lazy" width="915" height="1400">
+              </picture>
+              <picture>
+                <source srcset="assets/images/resultado4-antes.webp" type="image/webp">
+                <img class="compare-img compare-before" src="assets/images/resultado4-antes.jpg" alt="Antes: parachoques delantero fracturado tras colisión (placa cubierta por privacidad)" loading="lazy" width="1400" height="1050">
+              </picture>
+              <span class="compare-badge compare-badge-before">Antes</span>
+              <span class="compare-badge compare-badge-after">Después</span>
+              <div class="compare-handle" aria-hidden="true"></div>
+              <input type="range" class="compare-range" min="0" max="100" value="50" aria-label="Deslizar para comparar antes y después: reparación de parachoques delantero en SUV">
+            </div>
           </div>
-          <div class="result-pair">
-            <figure>
-              <img src="assets/images/placeholder-photo-a.svg" alt="Antes: faros opacos y desgastados" loading="lazy" width="800" height="600">
-              <figcaption>Antes</figcaption>
-            </figure>
-            <figure>
-              <img src="assets/images/placeholder-photo-b.svg" alt="Después: faros restaurados con transparencia original" loading="lazy" width="800" height="600">
-              <figcaption>Después</figcaption>
-            </figure>
-          </div>
+
         </div>
       </div>
     </section>
@@ -276,7 +317,10 @@
           <p class="location-address">Av. Río Coca, Quito — a menos de 50 metros del Tuti de la Río Coca.</p>
           <div class="location-schedule">
             <h3>Horario</h3>
-            <p>Horario de atención pendiente de confirmar. Escríbenos por WhatsApp para consultar disponibilidad.</p>
+            <ul class="schedule-list">
+              <li><span>Lunes a viernes</span> 8:30 a.m. – 5:30 p.m.</li>
+              <li><span>Sábados</span> 9:00 a.m. – 12:30 p.m.</li>
+            </ul>
           </div>
           <a href="https://wa.me/593992744444" class="btn btn-secondary" target="_blank" rel="noopener">Consultar por WhatsApp</a>
         </div>
@@ -323,13 +367,13 @@
           <p class="contact-address">Av. Río Coca, Quito — a menos de 50 metros del Tuti de la Río Coca.</p>
 
           <div class="contact-social" aria-label="Redes sociales">
-            <a href="#" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
+            <a href="https://www.instagram.com/adtautoscolisiones/" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
             </a>
-            <a href="#" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
+            <a href="https://www.facebook.com/profile.php?id=61592028568207" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-4 1.8-4 4v2H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V9c0-.6.4-1 1-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
             </a>
-            <a href="#" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
+            <a href="https://www.tiktok.com/@adt_autos" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
               <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path d="M13.5 3v11.2a2.8 2.8 0 1 1-2-2.68" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13.5 3c.3 2.2 2 3.9 4.2 4.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
             </a>
           </div>
@@ -340,16 +384,21 @@
 
   <footer class="site-footer">
     <div class="container footer-content">
-      <a href="#inicio" class="logo footer-logo">ADT <span>AUTOS</span></a>
+      <a href="#inicio" class="logo footer-logo">
+        <picture>
+          <source srcset="assets/images/logo-adt-autos.webp" type="image/webp">
+          <img src="assets/images/logo-adt-autos.jpg" alt="ADT AUTOS - Expertos en colisiones" width="480" height="480" class="logo-img">
+        </picture>
+      </a>
       <p class="footer-copy">&copy; 2026 ADT AUTOS. Todos los derechos reservados.</p>
       <div class="footer-social" aria-label="Redes sociales">
-        <a href="#" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
+        <a href="https://www.instagram.com/adtautoscolisiones/" class="social-icon" aria-label="ADT AUTOS en Instagram" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor"/></svg>
         </a>
-        <a href="#" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
+        <a href="https://www.facebook.com/profile.php?id=61592028568207" class="social-icon" aria-label="ADT AUTOS en Facebook" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M14 8.5h2.5V5H14c-2.2 0-4 1.8-4 4v2H8v3.5h2V21h3.5v-6.5H16l.5-3.5h-3V9c0-.6.4-1 1-1z" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linejoin="round"/></svg>
         </a>
-        <a href="#" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
+        <a href="https://www.tiktok.com/@adt_autos" class="social-icon" aria-label="ADT AUTOS en TikTok" target="_blank" rel="noopener">
           <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M13.5 3v11.2a2.8 2.8 0 1 1-2-2.68" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><path d="M13.5 3c.3 2.2 2 3.9 4.2 4.1" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
         </a>
       </div>

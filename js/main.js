@@ -46,6 +46,24 @@
     });
   }
 
+  // Before/after comparison sliders
+  document.querySelectorAll('.compare-frame').forEach(function (frame) {
+    var range = frame.querySelector('.compare-range');
+    var before = frame.querySelector('.compare-before');
+    var handle = frame.querySelector('.compare-handle');
+
+    function update(value) {
+      before.style.clipPath = 'inset(0 ' + (100 - value) + '% 0 0)';
+      handle.style.left = value + '%';
+    }
+
+    range.addEventListener('input', function () {
+      update(range.value);
+    });
+
+    update(range.value);
+  });
+
   // Contact form -> WhatsApp
   var form = document.getElementById('contact-form');
   var status = document.getElementById('form-status');

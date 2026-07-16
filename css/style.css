@@ -209,10 +209,22 @@ p {
   text-transform: uppercase;
   letter-spacing: 0.05em;
   font-size: 1.4rem;
+  display: inline-flex;
+  align-items: center;
 }
 
 .logo span {
   color: var(--color-orange);
+}
+
+.logo-img {
+  height: 44px;
+  width: auto;
+  display: block;
+}
+
+.footer-logo .logo-img {
+  height: 44px;
 }
 
 .nav-toggle {
@@ -277,6 +289,7 @@ p {
 }
 
 .nav-links a {
+  white-space: nowrap;
   transition: color var(--transition-fast);
 }
 
@@ -304,6 +317,7 @@ p {
 .nav-cta {
   width: 100%;
   text-align: center;
+  white-space: nowrap;
 }
 
 @media (min-width: 900px) {
@@ -314,18 +328,21 @@ p {
   .nav-menu {
     position: static;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
     align-items: center;
     background: transparent;
     padding: 0;
     transform: none;
     border-left: none;
-    gap: 2rem;
+    gap: 1rem 1.5rem;
   }
 
   .nav-links {
     flex-direction: row;
-    gap: 1.75rem;
-    font-size: 0.85rem;
+    flex-wrap: wrap;
+    gap: 0.85rem 1.25rem;
+    font-size: 0.8rem;
   }
 
   .nav-cta {
@@ -348,6 +365,7 @@ p {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center 68%;
 }
 
 .hero-overlay {
@@ -398,10 +416,32 @@ p {
 }
 
 /* ========== Que hacemos / Proceso ========== */
+.qh-grid {
+  display: grid;
+  gap: 2.5rem;
+  align-items: center;
+  margin-top: 2.5rem;
+}
+
+.qh-media img {
+  border-radius: var(--radius);
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+}
+
+@media (min-width: 900px) {
+  .qh-grid {
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 4rem;
+  }
+}
+
 .process-steps {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
   gap: 2rem;
-  margin-top: 3rem;
+  margin-top: 2.5rem;
   counter-reset: step;
 }
 
@@ -430,12 +470,6 @@ p {
   letter-spacing: 0.03em;
 }
 
-@media (min-width: 700px) {
-  .process-steps {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 2rem;
-  }
-}
 
 /* ========== Servicios ========== */
 .services-grid {
@@ -491,35 +525,57 @@ p {
 /* ========== Resultados ========== */
 .results-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2rem;
   margin-top: 2.5rem;
 }
 
-.result-pair {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.5rem;
-  background-color: var(--color-surface);
-  padding: 0.75rem;
-  border-radius: var(--radius);
+@media (min-width: 700px) {
+  .results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
-.result-pair figure {
+/* Before/after comparison slider. Built with a native range input
+   (keyboard + touch accessible for free) layered over two stacked
+   images; the top image is revealed via clip-path driven by JS. */
+.compare-frame {
   position: relative;
-}
-
-.result-pair img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  overflow: hidden;
   border-radius: var(--radius);
+  background-color: var(--color-surface);
 }
 
-.result-pair figcaption {
+.compare-frame picture {
+  display: contents;
+}
+
+.compare-img {
   position: absolute;
-  bottom: 0.5rem;
-  left: 0.5rem;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  user-select: none;
+}
+
+.compare-after {
+  z-index: 1;
+}
+
+.compare-before {
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+}
+
+.compare-badge {
+  position: absolute;
+  top: 0.75rem;
+  z-index: 4;
   background-color: rgba(17, 17, 17, 0.75);
   color: var(--color-white);
   font-family: var(--font-subheading);
@@ -529,18 +585,84 @@ p {
   letter-spacing: 0.05em;
   padding: 0.25rem 0.6rem;
   border-radius: 2px;
+  pointer-events: none;
 }
 
-@media (min-width: 700px) {
-  .results-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+.compare-badge-before {
+  left: 0.75rem;
 }
 
-@media (min-width: 1100px) {
-  .results-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+.compare-badge-after {
+  right: 0.75rem;
+}
+
+.compare-handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 3px;
+  background-color: var(--color-white);
+  transform: translateX(-50%);
+  z-index: 3;
+  pointer-events: none;
+}
+
+.compare-handle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background-color: var(--color-orange);
+  transform: translate(-50%, -50%);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
+}
+
+.compare-handle::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAxNiI+PHBhdGggZD0iTTkgMiBMMyA4IEw5IDE0IiBmaWxsPSJub25lIiBzdHJva2U9IndoaXRlIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxwYXRoIGQ9Ik0xNSAyIEwyMSA4IEwxNSAxNCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJ3aGl0ZSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz48L3N2Zz4=");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+
+.compare-range {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+  z-index: 5;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.compare-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 42px;
+  height: 100%;
+}
+
+.compare-range::-moz-range-thumb {
+  width: 42px;
+  height: 100%;
+  border: none;
+  background: transparent;
+}
+
+.compare-range::-moz-range-track {
+  background: transparent;
 }
 
 /* ========== Testimonios ========== */
@@ -610,6 +732,22 @@ p {
 
 .location-schedule p {
   color: var(--color-gray);
+}
+
+.schedule-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: var(--color-gray);
+  padding-block: 0.6rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  max-width: 32ch;
+}
+
+.schedule-list li span {
+  font-family: var(--font-subheading);
+  font-weight: 600;
+  color: var(--color-white);
 }
 
 .location-map iframe {
